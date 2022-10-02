@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ffec4ec2ed.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./styles.sass" />
+    
+
+    <title>SaveLife</title>
+  </head>
+  <body >
+    <app-root></app-root>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+
+    <!--VALIDACION TEMPORAL CON JQUERY DEL LOGIN-->
+    <script>
+      $.validator.setDefaults( {
+          submitHandler: function () {
+          alert( "Mucho animo!" );
+      }
+      });
+    
+      $(document).ready(function(){
+          $('#signupForm').validate({
+          rules: {
+              email: {
+                  required: true,
+                  email: true
+              },
+              password: {
+                  required: true,
+                  minlength: 5
+              }
+          },
+          messages: {
+                  email: "Por favor ingresa un correo válido",
+                  password: {
+                      required: "Por favor ingresa una contraseña",
+                      minlength: "Tu contraseña debe ser de no menos de 5 caracteres de longitud"
+                  }
+          },
+          highlight: function ( element, errorClass, validClass ) {
+              $( element ).parents( ".col-sm-10" ).addClass( "has-error" ).removeClass( "has-success" );
+          },
+          unhighlight: function (element, errorClass, validClass) {
+              $( element ).parents( ".col-sm-10" ).addClass( "has-success" ).removeClass( "has-error" );
+          } 
+      });
+    });
+    </script>
+
+    <!--VALIDACION TEMPORAL CON JQUERY DEL REGISTRO-->
+    <script>
+    $.validator.setDefaults( {
+          submitHandler: function () {
+          alert( "Elige uno de los planes!" );
+      }
+      });
+
+    $(document).ready(function() {
+        $("#form-group").validate({
+          rules: {
+
+                name: {
+                    required:true,
+                },
+
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true,
+                    minlength: 5
+                },
+
+                numeroTelefonico: {
+                    required: true,
+                    minlength: 9
+                }
+
+            },
+           messages: {
+                  name: "Por favor ingrese su nombre completo",
+                  email: "Por favor ingresa un correo válido",
+                  password: {
+                      required: "Por favor ingresa una contraseña",
+                      minlength: "Tu contraseña debe ser de no menos de 5 caracteres de longitud"
+                  },
+                  numeroTelefonico: {
+                      required: "Por favor ingrese su numero de telefono",
+                      minlength: "Tu numero debe tener 9 caracteres"
+                  },
+          },
+          highlight: function ( element, errorClass, validClass ) {
+              $( element ).parents( ".col-sm-10" ).addClass( "has-error" ).removeClass( "has-success" );
+          },
+          unhighlight: function (element, errorClass, validClass) {
+              $( element ).parents( ".col-sm-10" ).addClass( "has-success" ).removeClass( "has-error" );
+          }, 
+          unhighlight: function (element, errorClass, validClass) {
+              $( element ).parents( ".col-sm-10" ).addClass( "has-success" ).removeClass( "has-error" );
+          }, 
+          unhighlight: function (element, errorClass, validClass) {
+              $( element ).parents( ".col-sm-10" ).addClass( "has-success" ).removeClass( "has-error" );
+          } 
+      });
+    });
+    </script> 
+
+  </body>
+</html>

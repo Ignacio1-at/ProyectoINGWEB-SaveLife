@@ -1,0 +1,31 @@
+@import "/src/variables.scss";
+
+.text-light { color:$blackviolet !important; }
+.bg-dark { background-color:$blue-s !important; }
+.bg-dark-x { background-color:$white; }
+
+.btn {
+    min-height: 3.125rem;
+    font-weight: 600;
+}
+
+.form-control {
+    min-height: 3.125rem;
+    line-height: initial;
+}
+.form-control:focus {
+    background-color:$white;
+    outline: none;
+}
+
+.img-1 {
+    background-image: url('../../assets/img/fondologin.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.img-2 {
+    background-image: url('../../assets/img/fondonaturaleza.jpg');
+    background-size: cover;
+    background-position: center;
+}
